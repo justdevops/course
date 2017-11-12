@@ -1,0 +1,19 @@
+#! /bin/bash
+
+ls -l
+
+read -p "Please enter the first file you searching for:" var1 
+
+read -p "Please enter the secound file you searching for:" var2                                                                                                                                                                         
+
+
+cat $var1
+cat ${var2:-tac $var1}
+
+
+
+
+
+
+
+

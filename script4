@@ -1,0 +1,19 @@
+#! /bin/bash
+
+var[1]='test1'
+var[2]='test2'
+
+${#var[1]} 
+${#var[2]}                                                                                                                                                                                                         
+
+
+if [ $var[1] -el 3 ];
+	then
+	 echo " $var[1] is less then 3" 
+	ifelse
+	[$var[1] eq $var[2]]; 
+	then 
+	$var[1] += $var[2] 
+	echo $var[2]
+fi
+   
