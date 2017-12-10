@@ -1,0 +1,16 @@
+---
+- hosts: servers
+  become: true
+
+  tasks:
+  - name: ensure ntp is at the latest version
+    yum: name=ntp state=latest
+  - name: write the ntp config file
+    copy: src=ntp.conf dest=/etc/ntp.conf
+    notify:
+    - restart: ntp_service
+  - name: ensure ntp  is running (and enable it at boot)
+    service: name=ntpd state=started enabled=yes
+  handlers:
+    - name: restart_service
+      service: name=ntpd state=restarted

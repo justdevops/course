@@ -1,0 +1,13 @@
+--- 
+- hosts: servers
+  become: true
+  tasks:
+  - name: show date
+    command: date
+
+  - name: show hostname
+    command: hostname
+
+  - name: test connection
+    ping:
+   
